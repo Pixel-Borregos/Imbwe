@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextManager : MonoBehaviour
+public class TextEventManager : MonoBehaviour
 {
     public float textSpeed;
 
@@ -11,19 +11,20 @@ public class TextManager : MonoBehaviour
 
     private TextFormatter textFormatter;
 
-    public bool renderNewLine;
+    public bool renderNewLine = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderNewLine = true;
-        textFormatter = new TextFormatter(language);
+        textFormatter = new TextFormatter("en");  
     }
 
     public IEnumerator RenderText(TextEvent textEvent)
     {
+
         List<string> outputText = textFormatter.GetOutputText(textEvent);
 
+        textEvent.textUI.gameObject.SetActive(true);
         foreach (string output in outputText)
         {
             textEvent.textUI.text = "";
@@ -34,17 +35,11 @@ public class TextManager : MonoBehaviour
                 textEvent.textUI.text += c;
             }
 
-            renderNewLine = false;
-
-            while (!renderNewLine)
-                continue;
+            while (!Input.GetKey(KeyCode.E))
+            {
+                yield return new WaitForSeconds(0);
+            }
         }
-    }
-
-    public void EnableRenderNewLine()
-    {
-        renderNewLine = true;
-    }
-
-    
+        textEvent.textUI.gameObject.SetActive(false);
+    }    
 }
