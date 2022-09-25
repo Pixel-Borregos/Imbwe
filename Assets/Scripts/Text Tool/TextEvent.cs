@@ -11,24 +11,25 @@ public class TextEvent : MonoBehaviour
      * 
      */
     #region Serialized Fields
-        [Header("Rendering Information")]
-        [Tooltip("The maximum amount of characters that the UI element can display by line")]
-        [SerializeField] public int maxCharsPerLine;
 
-        [Tooltip("The maximum amount of lines that the UI element can display")]
-        [SerializeField] public int maxLines;
+    [Tooltip("Id of text to display. If more than one could be displayed add multiple ids.")]
+    [SerializeField] public List<int> textIDs;
 
-        [Tooltip("Id of text to display. If more than one could be displayed add multiple ids.")]
-        [SerializeField] public List<int> textIDs;
+    [Tooltip("Target UI Element of the this text")]
+    [SerializeField] public TextMeshProUGUI textUI;
 
-        [Tooltip("Target UI Element of the this text")]
-        [SerializeField] public TextMeshProUGUI textUI;
+    [Tooltip("Text Event Manager")]
+    [SerializeField] TextEventManager textEventManager;
 
-        [Tooltip("Disable if this is something that needs to be unlocked")]
-        [SerializeField] public bool canOcurr = true;
+    bool canOcurr = true;
     #endregion
 
 
+    public void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+            Ocurr();
+    }
     public void Ocurr()
     {
         if (!canOcurr)
@@ -36,6 +37,10 @@ public class TextEvent : MonoBehaviour
 
         canOcurr = false;
 
-        GameObject.Find("TextManager").GetComponent<TextManager>().RenderText(this);
+        StartCoroutine(
+            textEventManager.RenderText(this)
+        );
+
+        canOcurr = true;
     }
 }
