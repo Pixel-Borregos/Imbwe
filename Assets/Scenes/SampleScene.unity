@@ -5715,12 +5715,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da842084102244e4697fc0236de06491, type: 3}
+  m_Script: {fileID: 11500000, guid: d3468c283b772494fbc1e4c870e9c7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textIDs: 01000000
-  textUI: {fileID: 382658687}
-  textEventManager: {fileID: 963194231}
+  textUI: {fileID: 0}
+  textEventInformationList:
+  - targetWorldStates: 10000000110000001200000011000000
+    textIDs: 010000000200000004000000
+    randomizeText: 0
+  - targetWorldStates: 
+    textIDs: 06000000070000002d000000
+    randomizeText: 0
 --- !u!1 &1090792688
 GameObject:
   m_ObjectHideFlags: 0
