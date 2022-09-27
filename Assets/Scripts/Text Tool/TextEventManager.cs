@@ -19,20 +19,20 @@ public class TextEventManager : MonoBehaviour
         textFormatter = new TextFormatter("en");  
     }
 
-    public IEnumerator RenderText(TextEvent textEvent)
+    public IEnumerator RenderText(TextEventInformation textEvent, TextMeshProUGUI textUI)
     {
 
-        List<string> outputText = textFormatter.GetOutputText(textEvent);
+        List<string> outputText = textFormatter.GetOutputText(textEvent.textIDs);
 
-        textEvent.textUI.gameObject.SetActive(true);
+        textUI.gameObject.SetActive(true);
         foreach (string output in outputText)
         {
-            textEvent.textUI.text = "";
+            textUI.text = "";
 
             foreach (char c in output)
             {
                 yield return new WaitForSecondsRealtime(textSpeed);
-                textEvent.textUI.text += c;
+                textUI.text += c;
             }
 
             while (!Input.GetKey(KeyCode.E))
@@ -40,6 +40,6 @@ public class TextEventManager : MonoBehaviour
                 yield return new WaitForSeconds(0);
             }
         }
-        textEvent.textUI.gameObject.SetActive(false);
+        textUI.gameObject.SetActive(false);
     }    
 }

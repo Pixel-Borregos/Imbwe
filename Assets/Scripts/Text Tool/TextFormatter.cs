@@ -14,9 +14,9 @@ public class TextFormatter
         _textContainer = new TextContainer(language);
     }
 
-    public List<string> GetOutputText( TextEvent textEvent )
+    public List<string> GetOutputText( List<int> textIDs)
     {
-        string fullOutputText = _textContainer.GetText(textEvent.textIDs[UnityEngine.Random.Range(0,textEvent.textIDs.Count)]);
+        string fullOutputText = _textContainer.GetText(textIDs[UnityEngine.Random.Range(0,textIDs.Count)]);
         return (fullOutputText.Contains("+")) 
             ? fullOutputText.Split("+").ToList() 
             : new List<string>() { fullOutputText };
