@@ -13,7 +13,13 @@ public class ActionWander : Action
     private Vector3 WANDER_TARGET = Vector3.zero;
     [Header("Wander Setup")]
     [SerializeField] NavMeshAgent agent;
-    
+
+    public override void EnterAction()
+    {
+        base.EnterAction();
+        //set animation?
+        agent.isStopped = false;
+    }
     public override void UpdateAction()
     {
         float random_binomialX = Random.Range(-1f, 1f);
@@ -26,5 +32,11 @@ public class ActionWander : Action
         Vector3 targetLocal = WANDER_TARGET + new Vector3(0, 0, WANDER_DISTANCE);
         Vector3 targetWorld = gameObject.transform.InverseTransformVector(targetLocal);
         agent.SetDestination(targetWorld);
+    }
+
+    public override void ExitAction()
+    {
+        base.ExitAction();
+        agent.isStopped = true;
     }
 }

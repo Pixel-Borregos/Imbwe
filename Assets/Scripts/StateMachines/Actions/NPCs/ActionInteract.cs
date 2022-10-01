@@ -7,9 +7,10 @@ public class ActionInteract : Action
     [SerializeField] EventTextInteraction textEvent;
     public override void EnterAction()
     {
-        base.EnterAction();
+        //set iddle animation.
         textEvent.Ocurr();
     }
+
 
 
 }
