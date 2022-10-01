@@ -13,6 +13,8 @@ public class TextEventManager : MonoBehaviour
 
     public bool renderNewLine = true;
 
+    public bool canStartEvent = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +43,6 @@ public class TextEventManager : MonoBehaviour
             }
         }
         textUI.gameObject.SetActive(false);
+        canStartEvent = true;
     }    
 }

@@ -16,8 +16,7 @@ public class EventTextInteraction : MonoBehaviour
     List<TextEventInformation> textEventInformationList;
 
 
-    TextEventManager textEventManager;
-    bool canOcurr = true;
+    public TextEventManager textEventManager;
 
     private void OnEnable()
     {
@@ -27,18 +26,15 @@ public class EventTextInteraction : MonoBehaviour
 
     public void Ocurr()
     {
-        if (!canOcurr)
+        if (!textEventManager.canStartEvent)
             return;
 
-        canOcurr = false;
+        textEventManager.canStartEvent = false;
 
         //se debe de actualizar a que el world state manager le diga que se le manda al text tool
         StartCoroutine(
             textEventManager.RenderText(textEventInformationList[0],textUI)
         );
-
-        canOcurr = true;
+       
     }
-
- 
 }

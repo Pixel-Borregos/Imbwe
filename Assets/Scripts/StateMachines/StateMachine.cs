@@ -19,12 +19,11 @@ public class StateMachine : MonoBehaviour
         currentState.action.EnterAction();
         while (true)
         {
+            Debug.Log(currentState.action);
             yield return new WaitForSecondsRealtime(updateRate);
 
-            if (!currentState.condition.IsConditionMet())
-                continue;
-
-            currentState.action.UpdateAction();
+            if (currentState.condition.IsConditionMet())
+                currentState.action.UpdateAction();
 
             foreach(StateConnectionInformation connection in currentState.connectionInformation)
             {
