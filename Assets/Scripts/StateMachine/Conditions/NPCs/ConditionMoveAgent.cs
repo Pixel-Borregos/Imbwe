@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ConditionWander : Condition
+public class ConditionMoveAgent : Condition
 {
     [SerializeField] NavMeshAgent agent;
 
