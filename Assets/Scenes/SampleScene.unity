@@ -1067,8 +1067,9 @@ GameObject:
   - component: {fileID: 569318782}
   - component: {fileID: 569318781}
   - component: {fileID: 569318780}
+  - component: {fileID: 569318783}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: NPCEyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,11 +1098,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569318778}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 15, y: 4.31, z: 3.14}
+  m_Center: {x: -7, y: -1.87, z: 0}
 --- !u!23 &569318781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569318778}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &569318783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569318778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee426ea1abd961e44a471d58de681488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sawPlayer: 0
+  sawInai: 0
 --- !u!1 &598427315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6584,11 +6599,15 @@ GameObject:
   - component: {fileID: 997074678}
   - component: {fileID: 997074677}
   - component: {fileID: 997074676}
+  - component: {fileID: 997074683}
   - component: {fileID: 997074675}
   - component: {fileID: 997074674}
   - component: {fileID: 997074673}
+  - component: {fileID: 997074682}
+  - component: {fileID: 997074681}
+  - component: {fileID: 997074684}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: HostileNPCPatrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6624,8 +6643,10 @@ MonoBehaviour:
   - {fileID: 1806082896}
   - {fileID: 565528624}
   - {fileID: 137152307}
+  - {fileID: 185104738}
+  - {fileID: 1243039757}
   agent: {fileID: 997074676}
-  backwardPatrol: 0
+  backwardPatrol: 1
 --- !u!114 &997074675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6642,6 +6663,11 @@ MonoBehaviour:
   states:
   - action: {fileID: 997074674}
     condition: {fileID: 997074673}
+    connectionInformation:
+    - trigger: {fileID: 997074682}
+      nextState: 1
+  - action: {fileID: 997074681}
+    condition: {fileID: 997074684}
     connectionInformation: []
   initialState: 0
 --- !u!195 &997074676
@@ -6746,6 +6772,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &997074681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997074672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f1b8981bfc4d34d8650f00d0f924d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 997074683}
+  agent: {fileID: 997074676}
+--- !u!114 &997074682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997074672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec3b32525247ff43a55eba7c386b960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 997074683}
+  eyes: {fileID: 569318783}
+--- !u!114 &997074683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997074672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b32f750373475f498849b1bb3dc74a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleObjectives: []
+  originalObjective: {fileID: 1758986313}
+  HP: 0
+  currentObjective: {fileID: 0}
+  alive: 1
+  beingAttacked: 0
+--- !u!114 &997074684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997074672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c749318f37aa741a9e84490b57a234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 997074676}
 --- !u!1 &1090792688
 GameObject:
   m_ObjectHideFlags: 0
@@ -7497,7 +7582,7 @@ GameObject:
   - component: {fileID: 1758986318}
   - component: {fileID: 1758986319}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26050,6 +26135,46 @@ PrefabInstance:
       propertyPath: textUI
       value: 
       objectReference: {fileID: 382658687}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[0].randomizeText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[1].textIDs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[1].textIDs.Array.data[0]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[1].textIDs.Array.data[1]
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[1].textIDs.Array.data[2]
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[1].targetWorldStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[0].targetWorldStates.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407191212415, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: textEventInformationList.Array.data[1].targetWorldStates.Array.data[0]
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 580601407202005740, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
+      propertyPath: m_Name
+      value: NPCEyes
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01115293a9d868a42be34c24cf7fc5f5, type: 3}
 --- !u!1001 &866722221083480442
@@ -26131,7 +26256,7 @@ PrefabInstance:
     - target: {fileID: 1662343354374313572, guid: 385a19e7d64407d4aa6c4fd79600da1c, type: 3}
       propertyPath: originalObjective
       value: 
-      objectReference: {fileID: 1758986316}
+      objectReference: {fileID: 1758986313}
     - target: {fileID: 1662343354374313575, guid: 385a19e7d64407d4aa6c4fd79600da1c, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -26182,6 +26307,10 @@ PrefabInstance:
       objectReference: {fileID: 1758986319}
     - target: {fileID: 1662343354374313583, guid: 385a19e7d64407d4aa6c4fd79600da1c, type: 3}
       propertyPath: m_Name
+      value: Inai
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662343354374313583, guid: 385a19e7d64407d4aa6c4fd79600da1c, type: 3}
+      propertyPath: m_TagString
       value: Inai
       objectReference: {fileID: 0}
     m_RemovedComponents: []

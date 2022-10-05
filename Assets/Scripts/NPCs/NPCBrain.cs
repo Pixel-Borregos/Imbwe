@@ -12,6 +12,7 @@ public class NPCBrain : MonoBehaviour
     public Transform currentObjective;
     public bool alive = true;
     private int currentHP;
+    public bool beingAttacked = false;
     
     private void OnEnable()
     {
@@ -38,5 +39,10 @@ public class NPCBrain : MonoBehaviour
     public void GetDamage(int damage)
     {
         currentHP -= damage;
+    }
+
+    public void SetObjectiveByName(string objective)
+    {
+        currentObjective = GameObject.Find(objective).transform;
     }
 }

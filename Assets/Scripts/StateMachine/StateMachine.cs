@@ -19,7 +19,6 @@ public class StateMachine : MonoBehaviour
         currentState.action.EnterAction();
         while (true)
         {
-            Debug.Log(currentState.action);
             yield return new WaitForSecondsRealtime(updateRate);
 
             if (currentState.condition.IsConditionMet())
