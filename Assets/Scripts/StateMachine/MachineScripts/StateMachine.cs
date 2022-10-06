@@ -6,11 +6,9 @@ public class StateMachine : MonoBehaviour
 {
     [Header("Machine Settings")]
     [Tooltip("The rate in which the states are read, the lower the number the faster it is.")]
-    [SerializeField] float updateRate;
+    [SerializeField] public float updateRate;
     [Tooltip("List of states for this machine")]
     [SerializeField] List<StateInformation> states;
-    [Tooltip("Index of the state that the machine is executing")]
-    [SerializeField] int initialState = 0;
 
     StateInformation currentState;
 
@@ -49,7 +47,7 @@ public class StateMachine : MonoBehaviour
 
     private void InitMachine()
     {
-        currentState = states[initialState];
+        currentState = states[0];
         StartCoroutine(ProcessState());
     }
 }

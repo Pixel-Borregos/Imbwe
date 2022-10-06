@@ -6187,13 +6187,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6b3e870aff2b4b913deae4cfc6337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetMachine: {fileID: 0}
+  updateMachine: 0
+  updateRate: 0
   waypoints:
   - {fileID: 77568461}
   - {fileID: 1147767307}
   - {fileID: 1929829228}
   - {fileID: 2182605}
-  agent: {fileID: 685579626}
   backwardPatrol: 1
+  agentInfo:
+    agent: {fileID: 0}
+    stoppingDistance: 0
+    speed: 0
 --- !u!114 &685579625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6638,6 +6644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6b3e870aff2b4b913deae4cfc6337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetMachine: {fileID: 997074675}
+  updateMachine: 1
+  updateRate: 0.1
   waypoints:
   - {fileID: 1651322044}
   - {fileID: 1806082896}
@@ -6645,8 +6654,11 @@ MonoBehaviour:
   - {fileID: 137152307}
   - {fileID: 185104738}
   - {fileID: 1243039757}
-  agent: {fileID: 997074676}
   backwardPatrol: 1
+  agentInfo:
+    agent: {fileID: 997074676}
+    stoppingDistance: 0.5
+    speed: 0.5
 --- !u!114 &997074675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6784,8 +6796,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f1b8981bfc4d34d8650f00d0f924d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetMachine: {fileID: 997074675}
+  updateMachine: 1
+  updateRate: 0.01
   brain: {fileID: 997074683}
-  agent: {fileID: 997074676}
+  agentInfo:
+    agent: {fileID: 997074676}
+    stoppingDistance: 2
+    speed: 3
 --- !u!114 &997074682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6827,9 +6845,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 997074672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c749318f37aa741a9e84490b57a234, type: 3}
+  m_Script: {fileID: 11500000, guid: 53748066252abeb4997bf775f05c7d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brain: {fileID: 997074683}
   agent: {fileID: 997074676}
 --- !u!1 &1090792688
 GameObject:
