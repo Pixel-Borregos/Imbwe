@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActionInteract : Action
@@ -10,7 +8,4 @@ public class ActionInteract : Action
         //set iddle animation.
         textEvent.Ocurr();
     }
-
-
-
 }

@@ -1,22 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class ActionPatrol : Action
+public class ActionPatrol : MovingAction
 {
+    [Header("Patrolling Configuration")]
     [SerializeField] List<Transform> waypoints;
-    [SerializeField] NavMeshAgent agent;
     [SerializeField] bool backwardPatrol = true;
+
     private Transform current_waypoint;
     private int waypointIndex = 0;
     private short modifier = 1;
-    
 
     public override void EnterAction()
     {
         base.EnterAction();
-        //set animation?
-        agent.isStopped = false;
         modifier = 1;
         waypointIndex = 0;
         current_waypoint = waypoints[0];
@@ -27,7 +24,7 @@ public class ActionPatrol : Action
         base.UpdateAction();
         Vector3 destination = new Vector3(current_waypoint.position.x, transform.position.y, current_waypoint.position.z);
 
-        agent.SetDestination(destination);
+        agentInfo.agent.SetDestination(destination);
 
         if (backwardPatrol)
         {
@@ -45,11 +42,5 @@ public class ActionPatrol : Action
 
         waypointIndex += modifier;
         current_waypoint = waypoints[waypointIndex];
-    }
-
-    public override void ExitAction()
-    {
-        base.ExitAction();
-        agent.isStopped = true;
     }
 }
