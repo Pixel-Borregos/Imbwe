@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(StateMachine))]
 public class Action: MonoBehaviour
 {
     [Header("Machine configuration")]
@@ -9,7 +10,10 @@ public class Action: MonoBehaviour
 
     public virtual void Reset()
     {
-        targetMachine = gameObject.GetComponent<StateMachine>(); 
+        targetMachine = gameObject.GetComponent<StateMachine>();
+        if(targetMachine != null)
+            updateRate = targetMachine.updateRate; 
+        
     }
 
     public virtual void EnterAction()

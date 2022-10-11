@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 580601407191212385}
   - component: {fileID: 580601407191212408}
   - component: {fileID: 580601407191212413}
-  - component: {fileID: 580601407191212409}
   - component: {fileID: 580601407191212410}
   - component: {fileID: 580601407191212414}
   - component: {fileID: 580601407191212411}
@@ -144,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateRate: 0.1
   states:
-  - action: {fileID: 580601407191212409}
+  - action: {fileID: 0}
     condition: {fileID: 580601407191212410}
     connectionInformation:
     - trigger: {fileID: 580601407191212411}
@@ -154,7 +153,6 @@ MonoBehaviour:
     connectionInformation:
     - trigger: {fileID: 580601407191212412}
       nextState: 0
-  initialState: 0
 --- !u!114 &580601407191212413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,23 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f1aef9311646b42ab6e29125f119ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetMachine: {fileID: 0}
+  updateMachine: 0
+  updateRate: 0
   textEvent: {fileID: 580601407191212415}
---- !u!114 &580601407191212409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580601407191212386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88974386d3e950147aa1a779ed4c5158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WANDER_DISTANCE: 0
-  WANDER_RADIUS: 35
-  WANDER_RATE: 1
-  agent: {fileID: 580601407191212385}
 --- !u!114 &580601407191212410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c749318f37aa741a9e84490b57a234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brain: {fileID: 0}
   agent: {fileID: 580601407191212385}
 --- !u!114 &580601407191212414
 MonoBehaviour:

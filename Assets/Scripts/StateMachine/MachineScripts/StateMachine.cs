@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Icon("Assets/pb")]
 public class StateMachine : MonoBehaviour
 {
     [Header("Machine Settings")]
@@ -20,7 +21,10 @@ public class StateMachine : MonoBehaviour
             yield return new WaitForSecondsRealtime(updateRate);
 
             if (currentState.condition.IsConditionMet())
+            {
+                Debug.Log("HI");
                 currentState.action.UpdateAction();
+            }
 
             foreach(StateConnectionInformation connection in currentState.connectionInformation)
             {
