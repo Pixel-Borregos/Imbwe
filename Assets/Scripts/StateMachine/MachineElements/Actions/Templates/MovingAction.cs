@@ -5,7 +5,6 @@ public class MovingAction : Action
 {
     [Header("NPC Organs")]
     [SerializeField] public NPCBrain brain;
-    [Header("Agent Configuration")]
     [SerializeField] public AgentInformation agentInfo;
 
     public override void Reset()
@@ -15,6 +14,8 @@ public class MovingAction : Action
         agentInfo.agent = GetComponent<NavMeshAgent>();
         agentInfo.stoppingDistance = agentInfo.agent.stoppingDistance;
         agentInfo.speed = agentInfo.agent.speed;
+        agentInfo.updateRotation = GetComponent<NavMeshAgent>().updateRotation;
+        
     }
 
     public override void EnterAction()
