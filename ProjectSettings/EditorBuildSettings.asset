@@ -4,5 +4,74 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/testScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/_Scenes/World/Town/TownSquare.unity
+    guid: bde8c6af5dfc4974990d894107e0835f
+  - enabled: 1
+    path: Assets/_Scenes/World/Town/TownAreaA.unity
+    guid: 0b16d499608ca074891866646957c816
+  - enabled: 1
+    path: Assets/_Scenes/World/Town/TownAreaB.unity
+    guid: 8041794af94e2784397998d22a981c49
+  - enabled: 1
+    path: Assets/_Scenes/World/Town/TownAreaC.unity
+    guid: 24a5e626b2e0aed4aae6a5f1cad66760
+  - enabled: 1
+    path: Assets/_Scenes/World/Town/TownMarket.unity
+    guid: d776f6bb6098a4443846b57427dc283c
+  - enabled: 1
+    path: Assets/_Scenes/World/Town/AuspiciousAltar.unity
+    guid: 2b236f2c7c74e7c4e879013533558bd0
+  - enabled: 1
+    path: Assets/_Scenes/World/Mountain/mountainA.unity
+    guid: f927b39a7d1c90a4a8797bcc9630f478
+  - enabled: 1
+    path: Assets/_Scenes/World/Mountain/mountainB.unity
+    guid: 245e9b543cda2ba43a179511d70918bd
+  - enabled: 1
+    path: Assets/_Scenes/World/Mountain/mountainC.unity
+    guid: 42235b151115fcf4197111491fd67da1
+  - enabled: 1
+    path: Assets/_Scenes/World/Mountain/mountainD.unity
+    guid: 678297e0e27005644a9c836f0b171d0f
+  - enabled: 1
+    path: Assets/_Scenes/World/Forest/ForestA.unity
+    guid: 63c91a1e066f4b2438c601b076c5d04a
+  - enabled: 1
+    path: Assets/_Scenes/World/Forest/ForestB.unity
+    guid: b396e5ec4c5c7844c970da383143c1a6
+  - enabled: 1
+    path: Assets/_Scenes/World/Forest/ForestC.unity
+    guid: 99aca8d0f24a59445bb0cafe82a758ec
+  - enabled: 1
+    path: Assets/_Scenes/World/Forest/ForestD.unity
+    guid: b2ef3a33e912f5f42b369c06df4bad51
+  - enabled: 1
+    path: Assets/_Scenes/World/Home/AkriRoom.unity
+    guid: 97c11b71b942b464c88142db33137078
+  - enabled: 1
+    path: Assets/_Scenes/World/Home/BeatenCliffPath.unity
+    guid: 7f777cf039bb9dc4980d26fddb3efe4f
+  - enabled: 1
+    path: Assets/_Scenes/World/Home/FatherRoom.unity
+    guid: 23089d2692c7bde4fb10d28f1125e7b3
+  - enabled: 1
+    path: Assets/_Scenes/World/Home/HomeInterior.unity
+    guid: acdfc92a398dc974b96f3bceb20f7343
+  - enabled: 1
+    path: Assets/_Scenes/World/Home/HomeOutside.unity
+    guid: 4494943fae52c9549a36bdcc722010eb
+  - enabled: 1
+    path: Assets/_Scenes/World/Temple/ChamberOfSwords.unity
+    guid: f9c18c4a337efb84c9a958796154abdc
+  - enabled: 1
+    path: Assets/_Scenes/World/Temple/GreatTempleOutside.unity
+    guid: 3e48ab517bae565438fc009069cbef53
+  - enabled: 1
+    path: Assets/_Scenes/World/Temple/TempleLibrary.unity
+    guid: 0f5e7e218c342c54995978304fed61bf
   m_configObjects: {}

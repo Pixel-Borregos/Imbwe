@@ -22,7 +22,6 @@ public class StateMachine : MonoBehaviour
 
             if (currentState.condition.IsConditionMet())
             {
-                Debug.Log("HI");
                 currentState.action.UpdateAction();
             }
 

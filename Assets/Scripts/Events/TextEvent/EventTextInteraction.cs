@@ -15,26 +15,17 @@ public class EventTextInteraction : MonoBehaviour
     [SerializeField] 
     List<TextEventInformation> textEventInformationList;
 
-
-    public TextEventManager textEventManager;
-
-    private void OnEnable()
-    {
-        if(textEventManager == null)
-            textEventManager = GameObject.Find("TextManager").GetComponent<TextEventManager>();
-    }
-
     public void Ocurr()
     {
-        if (!textEventManager.canStartEvent)
+        TextEventManager textManager = TextEventManager.GetInstance();
+        if (!textManager.canStartEvent)
             return;
 
-        textEventManager.canStartEvent = false;
+        textManager.canStartEvent = false;
 
         //se debe de actualizar a que el world state manager le diga que se le manda al text tool
         StartCoroutine(
-            textEventManager.RenderText(textEventInformationList[0],textUI)
+            textManager.RenderText(textEventInformationList[0],textUI)
         );
-       
     }
 }

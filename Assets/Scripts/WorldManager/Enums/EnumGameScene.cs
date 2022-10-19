@@ -1,0 +1,26 @@
+public enum EnumGameScene 
+{
+   TownSquare,
+   AuspiciousAltar,
+   TownAreaA,
+   TownAreaB,
+   TownAreaC,
+   TownMarket,
+   ForestA,
+   ForestB,
+   ForestC,
+   ForestD,
+   MountainA,
+   MountainB,
+   MountainC,
+   MountainD,
+   Beach,
+   BeatenCliffPath,
+   HomeOutside,
+   HomeInterior,
+   AkriRoom,
+   FatherRoom,
+   GreatTempleOutside,
+   TempleLibrary,
+   ChamberOfSwords
+}
