@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 580601407191212411}
   - component: {fileID: 580601407191212412}
   - component: {fileID: 580601407191212415}
+  - component: {fileID: 1141678342}
   m_Layer: 0
   m_Name: FriendlyNPC
   m_TagString: Untagged
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateRate: 0.1
   states:
-  - action: {fileID: 0}
+  - action: {fileID: 580601407191212413}
     condition: {fileID: 580601407191212410}
     connectionInformation:
     - trigger: {fileID: 580601407191212411}
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f1aef9311646b42ab6e29125f119ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMachine: {fileID: 0}
+  targetMachine: {fileID: 580601407191212408}
   updateMachine: 0
   updateRate: 0
   textEvent: {fileID: 580601407191212415}
@@ -239,7 +240,30 @@ MonoBehaviour:
   - targetWorldStates: 00000000
     textIDs: 010000000200000003000000
     randomizeText: 0
-  textEventManager: {fileID: 0}
+--- !u!114 &1141678342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580601407191212386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88974386d3e950147aa1a779ed4c5158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMachine: {fileID: 580601407191212408}
+  updateMachine: 0
+  updateRate: 0.1
+  brain: {fileID: 0}
+  agentInfo:
+    agent: {fileID: 580601407191212385}
+    stoppingDistance: 3
+    speed: 2
+    updateRotation: 1
+  WANDER_DISTANCE: 0
+  WANDER_RADIUS: 35
+  WANDER_RATE: 1
 --- !u!1 &580601407202005740
 GameObject:
   m_ObjectHideFlags: 0

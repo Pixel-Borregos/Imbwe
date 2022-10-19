@@ -6,14 +6,36 @@ using TMPro;
 public class TextEventManager : MonoBehaviour
 {
     public float textSpeed;
-
     public string language;
-
     private TextFormatter textFormatter;
-
     public bool renderNewLine = true;
-
     public bool canStartEvent = true;
+
+    private static TextEventManager _instance;
+
+
+    public static TextEventManager GetInstance()
+    {
+        if (_instance == null)
+        {
+            throw new System.NullReferenceException("You are trying to access a nonexistent Text Event Manager");
+        }
+        return _instance;
+    }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Debug.LogWarning("There is already an instance of Text Event Manager in the scene ");
+            Destroy(this);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

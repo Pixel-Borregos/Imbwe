@@ -185,7 +185,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8506952644376346339}
-  - component: {fileID: 8506952644376346338}
   m_Layer: 0
   m_Name: MountainD
   m_TagString: Untagged
@@ -211,25 +210,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8506952644376346338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8506952644376346341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da64a020d240f54891cd3f471c2c2ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  terrain_radius: 1
-  terrain_height: 1
-  terrain_randomizeHeight: 0
-  terrain_maxHeight: 1
-  terrain_origin: {x: 125, y: 22.31, z: 120}
-  prefab: {fileID: 3034399721889286812, guid: 9c50fed5ee4ea444da05ab255159b46b, type: 3}
-  terrain_container: {fileID: 0}
 --- !u!1 &8506952644703009029
 GameObject:
   m_ObjectHideFlags: 0
