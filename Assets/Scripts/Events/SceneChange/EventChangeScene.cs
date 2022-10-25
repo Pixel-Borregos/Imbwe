@@ -14,6 +14,6 @@ public class EventChangeScene : MonoBehaviour
     
     private void Ocurr()
     {
-        WorldManager.GetInstance().HandleSceneChange(transitionInformation);
+        WorldManager.GetInstance().HandleSceneChange(this.transitionInformation);
     }
 }
