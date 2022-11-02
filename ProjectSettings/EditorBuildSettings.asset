@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/World/Temple/TempleLibrary.unity
     guid: 0f5e7e218c342c54995978304fed61bf
+  - enabled: 1
+    path: Assets/_Scenes/World/Mountain/Beach.unity
+    guid: d74dad7fa453fa545bc3b4365172bd8a
   m_configObjects: {}

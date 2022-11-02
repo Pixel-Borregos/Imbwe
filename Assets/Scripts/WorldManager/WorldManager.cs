@@ -7,6 +7,7 @@ public class WorldManager : MonoBehaviour
     private static WorldManager _instance;
     private static bool firstScene = true;
     private static SceneTransitionInfo sceneInfo;
+    private string exitScene;
     public static WorldManager GetInstance()
     {
         if(_instance == null)
@@ -42,29 +43,38 @@ public class WorldManager : MonoBehaviour
         SceneManager.LoadScene(
             transitionInformation.targetScene.ToString()
         );
+        exitScene = SceneManager.GetActiveScene().name;
        sceneInfo = transitionInformation;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+
+        
+
         if (firstScene)
         {
             firstScene = false;
-            return;
+            exitScene = "MainMenu";
+
         }
 
-        Transform entryPoint = GameObject.Find("EntryContainer").transform.GetChild(sceneInfo.entryIndex);
+        Transform entryPoint = GameObject.Find("EntryContainer").transform.Find(exitScene).transform;
+        Transform sceneCenter = GameObject.Find("SceneCenter").transform;
         Transform player = PlayerSingleton.GetInstance().gameObject.transform;
         Transform camera = CameraSingleton.GetInstance().gameObject.transform;
         Transform inai = InaiSingleton.GetInstance().gameObject.transform;
 
+
+
+
         player.position = entryPoint.position;
-        player.rotation = entryPoint.rotation;
+        player.transform.LookAt(sceneCenter);
 
         camera.LookAt(player.gameObject.transform);
         camera.position = player.transform.position - player.transform.right * 1.3f + new Vector3(0,0.8f,0);
 
-        inai.position = player.transform.position - player.transform.right * 1.4f;
+        inai.position = player.transform.position;
 
 
     }
