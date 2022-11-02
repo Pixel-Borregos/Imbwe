@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
             transform.position += direction;
             camPos.position += direction;
         }
-        
     }
 
     private void MovePlayerHelper(float variable, int magnitude, ref Vector3 direction, Vector3 modifier, string trigger)

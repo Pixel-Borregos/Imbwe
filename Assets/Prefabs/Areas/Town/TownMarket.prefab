@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 755664932}
   - component: {fileID: 755664931}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: ForestA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1476218609}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &755664933
 MeshFilter:
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 776395749}
   - component: {fileID: 776395748}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: TownAreaB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1476218609}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &776395750
 MeshFilter:
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 1316641054}
   - component: {fileID: 1316641053}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: TownSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,7 +332,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1476218609}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1316641055
 MeshFilter:
@@ -424,9 +424,9 @@ Transform:
   m_LocalScale: {x: 1.4720603, y: 1, z: 0.7199942}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 776395747}
   - {fileID: 1316641052}
   - {fileID: 755664930}
+  - {fileID: 776395747}
   m_Father: {fileID: 9170717651965949255}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -561,6 +561,7 @@ Transform:
   - {fileID: 987602555}
   - {fileID: 334596629}
   - {fileID: 1476218609}
+  - {fileID: 3180960819135648343}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -883,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8425763600387953239, guid: e1cc1634d5b1b8a41b2579d5271d402c, type: 3}
       propertyPath: m_Name
-      value: SceneChange (1)
+      value: ForestA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1cc1634d5b1b8a41b2579d5271d402c, type: 3}
@@ -1223,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8425763600387953239, guid: e1cc1634d5b1b8a41b2579d5271d402c, type: 3}
       propertyPath: m_Name
-      value: SceneChange
+      value: TownSquare
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1cc1634d5b1b8a41b2579d5271d402c, type: 3}
@@ -1715,7 +1716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8425763600387953239, guid: e1cc1634d5b1b8a41b2579d5271d402c, type: 3}
       propertyPath: m_Name
-      value: SceneChange (2)
+      value: TownAreaB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1cc1634d5b1b8a41b2579d5271d402c, type: 3}
@@ -1813,4 +1814,74 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 807e03129af1c574e86f0b14b4a100b6, type: 3}
   m_PrefabInstance: {fileID: 2047026469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3377603252461409543
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9170717651965949255}
+    m_Modifications:
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4720603
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7199942
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.179
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352138250247780403, guid: c175d14f113139d40901033ca62f2075, type: 3}
+      propertyPath: m_Name
+      value: SceneCenter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c175d14f113139d40901033ca62f2075, type: 3}
+--- !u!4 &3180960819135648343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
+  m_PrefabInstance: {fileID: 3377603252461409543}
   m_PrefabAsset: {fileID: 0}
