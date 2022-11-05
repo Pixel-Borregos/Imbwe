@@ -6,6 +6,8 @@ public class ActionWander : MovingAction
     [SerializeField] float WANDER_DISTANCE = 0f;
     [SerializeField] float WANDER_RADIUS = 35f;
     [SerializeField] float WANDER_RATE = 1f;
+    [Space(10)]
+
     private float x0, z0;
 
     public override void EnterAction()
@@ -30,5 +32,8 @@ public class ActionWander : MovingAction
 
         x0 = x1Deg;
         z0 = z1Deg;
+
+        animator.SetTrigger("walk");
     }
+
 }

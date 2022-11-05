@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/World/Home/AkriRoom.unity
     guid: 97c11b71b942b464c88142db33137078
   - enabled: 1
-    path: Assets/_Scenes/World/Home/BeatenCliffPath.unity
+    path: Assets/_Scenes/World/Mountain/BeatenCliffPath.unity
     guid: 7f777cf039bb9dc4980d26fddb3efe4f
   - enabled: 1
     path: Assets/_Scenes/World/Home/FatherRoom.unity

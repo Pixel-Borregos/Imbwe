@@ -5,46 +5,60 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] Transform camPos;
     [SerializeField] Animator animator;
-    bool setTrigger = false;
 
     // Update is called once per frame
     void Update()
     {
         MovePlayer();
+        CameraRotation(); 
     }
 
     private void MovePlayer()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(0, 0, 0);
-        setTrigger = false;
-        MovePlayerHelper(z, 1, ref direction, transform.forward, "walk_front");
-        MovePlayerHelper(z, -1, ref direction, -transform.forward, "walk_back");
-        MovePlayerHelper(x, 1, ref direction, transform.right, "walk_right");
-        MovePlayerHelper(x, -1, ref direction, -transform.right, "walk_left");
-        if(direction == Vector3.zero)
-            animator.SetTrigger("iddle");
+        float x = Mathf.Ceil(Input.GetAxis("Horizontal"));
+        float z = Mathf.Ceil(Input.GetAxis("Vertical"));
+
+
+        if (x == 0 && z == 0)
+            animator.SetTrigger("idle");
         else
         {
-            direction *= Time.deltaTime* speed;
-            transform.position += direction;
-            camPos.position += direction;
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                animator.SetTrigger("walk");
+
+            transform.rotation = Quaternion.Euler(transform.rotation.x, CalculateAngle(x, z), transform.rotation.z);
+            transform.position += transform.forward * speed * Time.deltaTime;
+            camPos.position += transform.forward * speed * Time.deltaTime;
         }
     }
 
-    private void MovePlayerHelper(float variable, int magnitude, ref Vector3 direction, Vector3 modifier, string trigger)
+    private float CalculateAngle(float x, float z)
     {
-        if (variable == magnitude)
-            MovePlayerHelperHelper(ref direction, modifier, trigger);
+        Vector3 initialAngle = camPos.rotation.eulerAngles;
+        float angleModifier = 0;
+
+        if (z != 0 && x == 0)
+            angleModifier = 45 * ((z == -1) ? 4 : 0);
+
+        else if (z == 0 && x != 0)
+            angleModifier = 45 * ((x == 1) ? 2 : 6);
+
+        else
+            if (z == -1)
+                angleModifier = 45 * ((x == 1) ? 3 : 5);
+            else
+                angleModifier = 45 * ((x == 1) ? 1 : 7);
+
+        return initialAngle.y + angleModifier;
     }
-    private void MovePlayerHelperHelper(ref Vector3 direction, Vector3 modifier, string trigger)
+
+    private void CameraRotation()
     {
-        direction += modifier;
-        if (!setTrigger)
-        {
-            animator.SetTrigger(trigger);
-            setTrigger = true;
-        }
+        float y = Mathf.Ceil(Input.GetAxis("CameraHorizontal"));
+        float x = Mathf.Ceil(Input.GetAxis("CameraVertical"));
+        if (x == 0 && y == 0)
+            return;
+
+        camPos.RotateAround(transform.position, new Vector3(x, y,0), 0.5f);
     }
 }
