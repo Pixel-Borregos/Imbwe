@@ -6,7 +6,6 @@ public class WorldManager : MonoBehaviour
     
     private static WorldManager _instance;
     private static bool firstScene = true;
-    private static SceneTransitionInfo sceneInfo;
     private string exitScene;
     public static WorldManager GetInstance()
     {
@@ -40,17 +39,15 @@ public class WorldManager : MonoBehaviour
 
     public void HandleSceneChange(SceneTransitionInfo transitionInformation)
     {
+        exitScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(
             transitionInformation.targetScene.ToString()
         );
-        exitScene = SceneManager.GetActiveScene().name;
-       sceneInfo = transitionInformation;
+        
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
-        
 
         if (firstScene)
         {
@@ -64,9 +61,6 @@ public class WorldManager : MonoBehaviour
         Transform player = PlayerSingleton.GetInstance().gameObject.transform;
         Transform camera = CameraSingleton.GetInstance().gameObject.transform;
         Transform inai = InaiSingleton.GetInstance().gameObject.transform;
-
-
-
 
         player.position = entryPoint.position;
         player.transform.LookAt(sceneCenter);

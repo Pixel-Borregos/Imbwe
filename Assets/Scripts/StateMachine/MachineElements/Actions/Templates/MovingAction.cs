@@ -6,6 +6,7 @@ public class MovingAction : Action
     [Header("NPC Organs")]
     [SerializeField] public NPCBrain brain;
     [SerializeField] public AgentInformation agentInfo;
+    [SerializeField] public Animator animator;
 
     public override void Reset()
     {
@@ -29,5 +30,6 @@ public class MovingAction : Action
     {
         base.ExitAction();
         agentInfo.agent.isStopped = true;
+        animator.SetTrigger("idle");
     }
 }
