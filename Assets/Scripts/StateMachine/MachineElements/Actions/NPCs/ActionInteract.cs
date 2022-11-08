@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ActionInteract : Action
+public class ActionInteract : StateMachineAction
 {
     [SerializeField] EventTextInteraction textEvent;
     public override void EnterAction()

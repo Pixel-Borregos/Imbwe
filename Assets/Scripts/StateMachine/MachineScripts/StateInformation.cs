@@ -3,7 +3,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public struct StateInformation
 {
-    public Action action;
+    public StateMachineAction action;
 
     public Condition condition;
 

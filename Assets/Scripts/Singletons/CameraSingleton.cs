@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class CameraSingleton : MonoBehaviour
 {
-    public RotateCamera cameraRotation;
-
     private static CameraSingleton _instance;
     public static CameraSingleton GetInstance()
     {
@@ -26,10 +24,5 @@ public class CameraSingleton : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        cameraRotation = GetComponent<RotateCamera>();
     }
 }

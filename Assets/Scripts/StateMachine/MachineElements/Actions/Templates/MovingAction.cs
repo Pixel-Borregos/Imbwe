@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MovingAction : Action
+public class MovingAction : StateMachineAction
 {
     [Header("NPC Organs")]
     [SerializeField] public NPCBrain brain;

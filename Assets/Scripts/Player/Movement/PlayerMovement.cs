@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.rotation.x, CalculateAngle(x, z), transform.rotation.z);
             transform.position += transform.forward * speed * Time.deltaTime;
             camPos.position += transform.forward * speed * Time.deltaTime;
+            InaiSingleton.GetInstance().GetComponent<NavMeshAgent>().destination = transform.position;
         }
     }
 
@@ -55,10 +57,9 @@ public class PlayerMovement : MonoBehaviour
     private void CameraRotation()
     {
         float y = Mathf.Ceil(Input.GetAxis("CameraHorizontal"));
-        float x = Mathf.Ceil(Input.GetAxis("CameraVertical"));
-        if (x == 0 && y == 0)
+        if ( y == 0)
             return;
 
-        camPos.RotateAround(transform.position, new Vector3(x, y,0), 0.5f);
+        camPos.RotateAround(transform.position, new Vector3(0, y,0), 0.5f);
     }
 }

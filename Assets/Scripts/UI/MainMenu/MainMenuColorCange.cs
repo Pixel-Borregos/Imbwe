@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class MainMenuColorCange : MonoBehaviour
 
     private void ChangeToBlood()
     {
+        RenderSettings.fog = false;
+       
         mesh.material = mBlood;
         goRain.SetActive(false);
         goBlood.SetActive(true);

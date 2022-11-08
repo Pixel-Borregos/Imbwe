@@ -5,6 +5,7 @@ using TMPro;
 
 public class TextEventManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI textUI;
     public float textSpeed;
     public string language;
     private TextFormatter textFormatter;
@@ -40,12 +41,12 @@ public class TextEventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textFormatter = new TextFormatter("en");  
+        textFormatter = new TextFormatter(language);  
     }
 
-    public IEnumerator RenderText(TextEventInformation textEvent, TextMeshProUGUI textUI)
+    public IEnumerator RenderText(TextEventInformation textEvent)
     {
-
+        UIManagerSingleton.GetInstance().ChangeGameModeUI(1);
         List<string> outputText = textFormatter.GetOutputText(textEvent.textIDs);
 
         textUI.gameObject.SetActive(true);
@@ -66,5 +67,6 @@ public class TextEventManager : MonoBehaviour
         }
         textUI.gameObject.SetActive(false);
         canStartEvent = true;
+        UIManagerSingleton.GetInstance().ChangeGameModeUI(0);
     }    
 }

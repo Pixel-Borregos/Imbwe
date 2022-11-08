@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour
@@ -48,28 +49,37 @@ public class WorldManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            return;
+
+        Transform player = PlayerSingleton.GetInstance().gameObject.transform;
+        Transform camera = CameraSingleton.GetInstance().gameObject.transform;
+        Transform inai = InaiSingleton.GetInstance().gameObject.transform;
+        Transform sceneCenter = GameObject.Find("SceneCenter").transform;
 
         if (firstScene)
         {
             firstScene = false;
             exitScene = "MainMenu";
-
+            inai.GetComponent<NavMeshAgent>().enabled = true;
+            inai.GetComponent<StateMachine>().enabled = true;
+            UIManagerSingleton.GetInstance().ChangeGameModeUI(0);
+            camera.GetChild(0).gameObject.SetActive(true);
         }
 
         Transform entryPoint = GameObject.Find("EntryContainer").transform.Find(exitScene).transform;
-        Transform sceneCenter = GameObject.Find("SceneCenter").transform;
-        Transform player = PlayerSingleton.GetInstance().gameObject.transform;
-        Transform camera = CameraSingleton.GetInstance().gameObject.transform;
-        Transform inai = InaiSingleton.GetInstance().gameObject.transform;
+
 
         player.position = entryPoint.position;
-        player.transform.LookAt(sceneCenter);
+        player.transform.LookAt(sceneCenter.transform);
 
         camera.LookAt(player.gameObject.transform);
-        camera.position = player.transform.position - player.transform.right * 1.3f + new Vector3(0,0.8f,0);
-
-        inai.position = player.transform.position;
-
-
+        camera.position = player.transform.position - player.transform.right * 1.8f + new Vector3(0,1.7f,0);
+        inai.GetComponent<NavMeshAgent>().enabled = false;
+        inai.GetComponent<StateMachine>().enabled = false;
+        inai.position = player.position;
+        inai.GetComponent<NavMeshAgent>().enabled = true;
+        inai.GetComponent<StateMachine>().enabled = true;
     }
 }

@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 92afdb7ae3b43e84595622bdff7eb10b, type: 2}
 --- !u!1001 &1532455866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.638636
+      value: 11.01
       objectReference: {fileID: 0}
     - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
       propertyPath: m_LocalPosition.y
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.7
+      value: 26.17
       objectReference: {fileID: 0}
     - target: {fileID: 214663434811115344, guid: c175d14f113139d40901033ca62f2075, type: 3}
       propertyPath: m_LocalRotation.w
@@ -189,11 +189,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 812036335, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.64
+      value: 11.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663435056793737, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 214663435056793737, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.652982
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663435790115040, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 214663435790115040, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.679
       objectReference: {fileID: 0}
     - target: {fileID: 4563519225472442322, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -202,6 +214,10 @@ PrefabInstance:
     - target: {fileID: 4563519225472442322, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_LocalPosition.z
       value: -32.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563519226401162682, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.3
       objectReference: {fileID: 0}
     - target: {fileID: 6066879391544121510, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_RootOrder
@@ -258,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 6352138249616940931, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_Name
       value: GreatTempleOutside
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638793835727480697, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30.58
       objectReference: {fileID: 0}
     - target: {fileID: 7276491101283435375, guid: fff22aba8a32bde4da68f415f63808dd, type: 3}
       propertyPath: m_IsTrigger
