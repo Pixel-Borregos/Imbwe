@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionAttack : Action
+public class ActionAttack : StateMachineAction
 {
     [SerializeField] NPCBrain brain;
     [SerializeField] Animator animator;

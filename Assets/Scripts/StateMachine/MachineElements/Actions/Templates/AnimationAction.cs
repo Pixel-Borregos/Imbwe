@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class AnimationAction : Action
+public class AnimationAction : StateMachineAction
 {
     [Space(10)]
     [Header("Animator")]

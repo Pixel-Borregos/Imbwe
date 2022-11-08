@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(StateMachine))]
-public class Action: MonoBehaviour
+public class StateMachineAction: MonoBehaviour
 {
     [Header("Machine configuration")]
     [SerializeField] StateMachine targetMachine;
