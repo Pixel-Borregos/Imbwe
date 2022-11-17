@@ -14,7 +14,7 @@ public class EventTextInteraction : MonoBehaviour
     public void Ocurr()
     {
 
-        TextEventManager textManager = TextEventManager.GetInstance();
+        TextEventManagerSingleton textManager = TextEventManagerSingleton.GetInstance();
         if (!textManager.canStartEvent)
             return;
 

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 
 // This script is placed in public domain. The author takes no responsibility for any possible harm.
@@ -13,12 +12,7 @@ public class CrumpleMesh : MonoBehaviour {
     public bool recalculateNormals = false;
 
     Vector3[] baseVertices;
-    Perlin noise;
 
-    void Start ()
-    {
-        noise = new Perlin ();
-    }
 
     void Update () {
         Mesh mesh = GetComponent<MeshFilter>().mesh;
@@ -35,14 +29,11 @@ public class CrumpleMesh : MonoBehaviour {
         {
             Vector3 vertex = baseVertices[i];
 
-            vertex.x += noise.Noise(timex + vertex.x, 
-                timex + vertex.y, 
+            vertex.x += Mathf.PerlinNoise(timex + vertex.x, 
                 timex + vertex.z) * scale;
-            vertex.y += noise.Noise(timey + vertex.x, timey + 
-                vertex.y, 
+            vertex.y += Mathf.PerlinNoise(timey + vertex.x,
                 timey + vertex.z) * scale;
-            vertex.z += noise.Noise(timez + vertex.x, 
-                timez + vertex.y, 
+            vertex.z += Mathf.PerlinNoise(timez + vertex.x,
                 timez + vertex.z) * scale;
             
             vertices[i] = vertex;

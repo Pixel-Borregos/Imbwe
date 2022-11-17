@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenuColorCange : MonoBehaviour
@@ -13,7 +10,7 @@ public class MainMenuColorCange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("ChangeToBlood", 18f);
+        Invoke("ChangeToBlood", 18.5f);
     }
 
     private void ChangeToBlood()
