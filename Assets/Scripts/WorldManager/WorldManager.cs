@@ -44,12 +44,10 @@ public class WorldManager : MonoBehaviour
         SceneManager.LoadScene(
             transitionInformation.targetScene.ToString()
         );
-        
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        
+    {   
         if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
 
@@ -57,15 +55,20 @@ public class WorldManager : MonoBehaviour
         Transform camera = CameraSingleton.GetInstance().gameObject.transform;
         Transform inai = InaiSingleton.GetInstance().gameObject.transform;
         Transform sceneCenter = GameObject.Find("SceneCenter").transform;
-
+        Transform akriLook = player.GetChild(5);
         if (firstScene)
         {
             firstScene = false;
             exitScene = "MainMenu";
+
             inai.GetComponent<NavMeshAgent>().enabled = true;
             inai.GetComponent<StateMachine>().enabled = true;
             UIManagerSingleton.GetInstance().ChangeGameModeUI(0);
+
             camera.GetChild(0).gameObject.SetActive(true);
+            camera.GetChild(1).gameObject.SetActive(true);
+
+            player.GetComponent<StateMachine>().enabled = true;
         }
 
         Transform entryPoint = GameObject.Find("EntryContainer").transform.Find(exitScene).transform;
@@ -74,8 +77,10 @@ public class WorldManager : MonoBehaviour
         player.position = entryPoint.position;
         player.transform.LookAt(sceneCenter.transform);
 
-        camera.LookAt(player.gameObject.transform);
-        camera.position = player.transform.position - player.transform.right * 1.8f + new Vector3(0,1.7f,0);
+        
+        camera.position = player.transform.position - player.transform.forward * 1.4f + new Vector3(0,1.5f,0);
+        camera.LookAt(akriLook);
+
         inai.GetComponent<NavMeshAgent>().enabled = false;
         inai.GetComponent<StateMachine>().enabled = false;
         inai.position = player.position;

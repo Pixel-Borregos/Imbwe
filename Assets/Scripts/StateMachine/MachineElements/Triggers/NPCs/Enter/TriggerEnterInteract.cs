@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TriggerEnterInteract : Trigger
 {
-    [SerializeField] GameObject interactUI;
+    [SerializeField] GameObject interactUIClue;
     public bool canStartInteraction = false;
 
     private void OnTriggerStay(Collider other)
@@ -10,7 +10,7 @@ public class TriggerEnterInteract : Trigger
         if (other.tag == "Player")
         {
             canStartInteraction = Input.GetKey(KeyCode.E);
-            interactUI.SetActive(true);
+            interactUIClue.SetActive(true);
         }
     }
 
@@ -19,14 +19,13 @@ public class TriggerEnterInteract : Trigger
         if (other.tag == "Player")
         {
             canStartInteraction = false;
-            interactUI.SetActive(false);
+            interactUIClue.SetActive(false);
         }
         
     }
 
     public override bool IsTriggerActive()
     {
-        
         return canStartInteraction;
     }
 

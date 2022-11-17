@@ -276,6 +276,7 @@ MonoBehaviour:
   updateMachine: 0
   updateRate: 0.2
   textEvent: {fileID: 1680082372}
+  animator: {fileID: 917160923576566275}
 --- !u!114 &1680082374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b252e7414e00ad43b348b44eef37856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactUI: {fileID: 1432127673}
+  interactUIClue: {fileID: 1432127673}
   canStartInteraction: 0
 --- !u!114 &1680082375
 MonoBehaviour:
