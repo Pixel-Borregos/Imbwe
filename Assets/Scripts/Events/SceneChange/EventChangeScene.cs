@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class EventChangeScene : MonoBehaviour
 {
     [SerializeField] SceneTransitionInfo transitionInformation;

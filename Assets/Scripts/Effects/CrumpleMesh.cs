@@ -4,7 +4,9 @@ using UnityEngine;
 
 // This script is placed in public domain. The author takes no responsibility for any possible harm.
 
-
+/// <summary>
+/// This script is used to give the water a moving effect.
+/// </summary>
 public class CrumpleMesh : MonoBehaviour {
 
 	public float scale = 1.0f;
